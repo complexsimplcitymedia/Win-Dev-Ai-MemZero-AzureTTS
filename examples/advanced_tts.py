@@ -39,6 +39,7 @@ def main():
     print("\n1. Available Voices")
     print("-" * 70)
     voices = tts.get_available_voices()
+    # Note: Voice names are public Azure TTS identifiers, not sensitive data
     for voice in voices[:5]:
         print(f"  • {voice['name']} ({voice['gender']}, {voice['locale']})")
     
