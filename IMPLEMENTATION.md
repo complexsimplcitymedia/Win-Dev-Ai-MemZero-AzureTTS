@@ -40,7 +40,7 @@ Universal, model-agnostic memory system that works with ANY AI model.
 - Search capabilities
 - Memory pruning
 
-**Key Innovation**: Frees AI from context window limitations by providing external, searchable memory.
+**Key Innovation**: Provides external, searchable memory that helps overcome context window limitations.
 
 **Test Status**: ✅ Verified and operational
 
@@ -91,7 +91,7 @@ Singleton Ollama manager ensuring one shared instance for all AI models.
 
 ### Model Agnostic ✅
 - No model-specific code in core
-- Works with GPT, Claude, Llama, Mistral, any model
+- Provides memory capabilities compatible with GPT, Claude, Llama, Mistral, and other AI models
 - Universal memory format
 - Pluggable AI backends
 
@@ -247,10 +247,10 @@ All contributions must align with this directive and not compromise:
 
 ## Performance Characteristics
 
-- **Memory Operations**: O(1) store/retrieve, O(n) search
-- **MCP Operations**: O(1) service/gateway lookup
+- **Memory Operations**: Store/retrieve with JSON serialization, O(n) search where n = number of memories
+- **MCP Operations**: O(1) service/gateway lookup (dictionary-based)
 - **Thread Safe**: All components support concurrent access
-- **Storage**: JSON-based, can be extended to databases
+- **Storage**: JSON-based (suitable for moderate memory sizes), can be extended to databases for larger deployments
 
 ---
 
@@ -275,7 +275,7 @@ Potential improvements while maintaining architecture:
 
 The system successfully implements a **universal, model-agnostic memory architecture** with **MCP as the single source of truth**, fulfilling the Copilot Prime Directive.
 
-**This system represents a paradigm shift in AI architecture** - freeing AI from context limitations through universal memory, while maintaining model independence and centralized governance.
+**This system provides a foundation for AI applications** that need persistent memory across sessions, model independence, and centralized service governance through the MCP architecture.
 
 ---
 
