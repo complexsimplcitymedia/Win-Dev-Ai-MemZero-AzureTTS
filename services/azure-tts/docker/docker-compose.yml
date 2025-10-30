@@ -1,0 +1,9 @@
+# docker-compose.yml
+services:
+  your-main-service:
+    env_file: .env
+    environment:
+      - AZURE_SPEECH_KEY=${AZURE_SPEECH_KEY}
+      - AZURE_SPEECH_REGION=${AZURE_SPEECH_REGION}
+    devices:
+      - /dev/snd:/dev/snd  # Audio device

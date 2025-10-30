@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "azure-tts": {
+      "command": "python3",
+      "args": [
+        "/mnt/r/AI-Windows_Assistant-master/module-Cognitive-Speech-TTS/azure_tts/mcp_tts_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/mnt/r/AI-Windows_Assistant-master/module-Cognitive-Speech-TTS/azure_tts"
+      }
+    }
+  }
+}

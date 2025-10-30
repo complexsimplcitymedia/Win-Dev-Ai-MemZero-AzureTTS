@@ -1,0 +1,9 @@
+"""
+Azure TTS Module - Text-to-Speech for AI outputs
+"""
+
+from .engine import AzureTTS
+from .config import TTSConfig
+
+__version__ = '1.0.0'
+__all__ = ['AzureTTS', 'TTSConfig']
