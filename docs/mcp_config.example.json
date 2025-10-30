@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "architecture": "MCP-first",
+    "capabilities": [
+      "universal-memory",
+      "model-agnostic",
+      "gateway-routing"
+    ]
+  },
+  "services": [
+    {
+      "name": "primary_memory_agent",
+      "service_type": "memory_agent",
+      "endpoint": "agent://primary_agent",
+      "enabled": true,
+      "metadata": {
+        "agent_id": "primary_agent",
+        "capabilities": [
+          "memory",
+          "retrieval",
+          "conversation"
+        ]
+      }
+    },
+    {
+      "name": "azure_tts_bridge",
+      "service_type": "tts_bridge",
+      "endpoint": "tts://wsl-windows-bridge",
+      "enabled": true,
+      "metadata": {
+        "is_wsl": true,
+        "available_voices": [
+          "en-US-JennyNeural",
+          "en-US-GuyNeural",
+          "en-US-AriaNeural"
+        ],
+        "capabilities": [
+          "text-to-speech",
+          "wsl-bridge",
+          "azure-tts"
+        ]
+      }
+    },
+    {
+      "name": "ollama_shared",
+      "service_type": "ollama_instance",
+      "endpoint": "http://localhost:11434",
+      "enabled": true,
+      "metadata": {
+        "singleton": true,
+        "models": [],
+        "capabilities": [
+          "text-generation",
+          "chat",
+          "embeddings"
+        ]
+      }
+    }
+  ],
+  "gateways": [
+    {
+      "name": "main_gateway",
+      "gateway_type": "universal",
+      "target_services": [
+        "primary_memory_agent",
+        "azure_tts_bridge",
+        "ollama_shared"
+      ],
+      "enabled": true,
+      "metadata": {
+        "role": "primary_router"
+      }
+    }
+  ]
+}
