@@ -38,10 +38,10 @@ def main():
     # 1. List available voices
     print("\n1. Available Voices")
     print("-" * 70)
-    voices = tts.get_available_voices()
+    available_voices = tts.get_available_voices()
     # Note: Voice names are public Azure TTS identifiers, not sensitive data
-    for voice in voices[:5]:
-        print(f"  • {voice['name']} ({voice['gender']}, {voice['locale']})")
+    for voice_info in available_voices[:5]:
+        print(f"  • {voice_info['name']} ({voice_info['gender']}, {voice_info['locale']})")
     
     # 2. Synthesize with different voices
     print("\n2. Testing Different Voices")
